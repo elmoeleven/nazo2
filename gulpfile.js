@@ -3,7 +3,6 @@ var del = require('del');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var traceur = require('gulp-traceur');
-var sass = require('gulp-sass');
 var rework = require('rework');
 var npmRework = require('rework-npm');
 var path = require('path');
@@ -14,7 +13,6 @@ var PATHS = {
   src: {
     js: 'src/**/*.js',
     html: 'src/**/*.html',
-    sass: 'src/**/*.scss',
     css: {
       main: 'src/index.css',
       all: 'src/**/*.css'
@@ -112,7 +110,6 @@ gulp.task('play', ['default'], function(){
 
   gulp.watch(PATHS.src.html, ['html']);
   gulp.watch(PATHS.src.js, ['js']);
-  gulp.watch(PATHS.src.sass, ['sass']);
   gulp.watch(PATHS.src.css.all, ['css']);
 
   app = connect()
